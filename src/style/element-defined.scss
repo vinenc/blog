@@ -1,0 +1,15 @@
+.github-markdown-body .hljs-comment,
+.github-markdown-body .hljs-quote {
+  font-style: normal !important;
+}
+blockquote {
+  margin: 0 0 16px;
+}
+.warning {
+  .el-alert__title {
+    line-height: 23px;
+  }
+  .el-alert__close-btn {
+    top: 13px !important;
+  }
+}
