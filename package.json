@@ -14,7 +14,6 @@
     "chinese-lunar-calendar": "^1.0.1",
     "element-plus": "^2.2.32",
     "highlight.js": "^11.7.0",
-    "minio-vite-js": "^0.0.6",
     "mitt": "^3.0.0",
     "pinia": "^2.0.32",
     "vue": "^3.2.45",
