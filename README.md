@@ -1,7 +1,70 @@
-# Vue 3 + Vite
+# Blog
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+> 声明：此项目只发布于 Github，基于 MIT 协议，免费且作为开源学习使用。
 
-## Recommended IDE Setup
+### 介绍
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+本项目为个人开发的开源博客，本项目基于以下的技术：
+
+- 客户端(Client)：Vue3 + Vite + Element Plus
+
+- 服务端(Server)：NodeJS-Express + MySQL
+
+Demo展示：https://www.waowaowao.cn
+
+## 使用
+
+### 后端
+
+进入Server目录下，安装依赖
+
+```shell
+npm install
+```
+
+**数据库**：在MySQl中执行 `blog.sql`，脚本会创建一个名为 blog 的数据库和一些表。
+
+在 /config 目录下的 `db.js` 配置数据库信息
+
+```js
+const secret = require("./secret"); // 删除这行
+const pool = mySql.createPool({
+  host: secret.host, // 数据库地址
+  port: secret.port, // 端口
+  user: secret.user, // 用户
+  password: secret.password, // 密码
+  database: "blog",
+  connectionLimit: 20,
+});
+```
+
+**运行**：服务默认监听 6927 端口。你可以在 `app.js` 中修改端口，位置在 `httpServer.listen("6927")` 。
+
+```shell
+npm start
+```
+
+### 前端
+
+进入Client目录下，安装依赖
+
+```shell
+npm install
+```
+
+在 /src/api 目录下的 `axios.js` 配置后端地址
+
+```js
+import secret from "./secret"; // 删除这行
+const API = axios.create({
+  baseURL: secret.baseURL, // 服务器地址 127.0.0.1:6927
+  timeout: 60000,
+  changeOrigin: true,
+});
+```
+
+**运行**：服务默认在 4687 端口启动
+
+```shell
+npm run dev
+```
