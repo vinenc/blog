@@ -30,7 +30,7 @@ const hotList = ref("");
 // API
 const getPaperTop = function () {
   API.get("/getPaperTop").then((res) => {
-    hotList.value = res.data;
+    hotList.value = res.data.splice(0, 5);
   });
 };
 
@@ -79,7 +79,7 @@ onBeforeMount(() => {
       line-height: 42px;
       font-weight: bold;
       margin-right: 10px;
-      color: #f46928;
+      color: #fd996b;
     }
     .title {
       a {

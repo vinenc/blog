@@ -37,14 +37,14 @@ defineProps(["resultList", "showNone", "input"]);
   box-shadow: 0 1px 6px rgb(0 0 0 / 8%);
   @include background-color("background-1");
   .box {
-    padding: 5px 20px;
+    padding: 10px 20px;
     @include transition-5;
     cursor: pointer;
     @include text-overflow-ellipsis(1);
     &:hover {
       padding-left: 2rem;
       @include color("theme-color-2");
-      @include background-color("background-2");
+      @include background-color("theme-background-1");
     }
   }
   .more {

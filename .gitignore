@@ -26,3 +26,5 @@ dist-ssr
 # User defined
 src/api/secret.js
 stats.html
+auto-imports.d.ts
+components.d.ts

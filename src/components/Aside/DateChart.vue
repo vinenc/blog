@@ -2,7 +2,7 @@
   <div class="date-chart">
     <div class="data">
       <div class="text-box" v-for="tap in tap" :key="tap.text">
-        <p>{{ tap.value }}</p>
+        <p class="num">{{ tap.value }}</p>
         <p>{{ tap.text }}</p>
       </div>
     </div>
@@ -29,9 +29,9 @@ import { getChartData, chineseMonth, addCount } from "@/js/chart";
 
 const chartData = ref("");
 const tap = ref([
-  { text: "MEMO", value: "11" },
-  { text: "TAG", value: "22" },
-  { text: "DAY", value: "33" },
+  { text: "MEMO", value: "" },
+  { text: "TAG", value: "" },
+  { text: "DAY", value: "" },
 ]);
 
 const getChartCount = function () {
@@ -72,6 +72,10 @@ onBeforeMount(() => {
   .data {
     @include display(flex, space-between, center);
     .text-box {
+      .num {
+        width: auto;
+        height: 36px;
+      }
       p {
         margin: 0;
         text-align: left;
