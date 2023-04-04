@@ -63,36 +63,43 @@ const copyMessage = function (value) {
   height: 0;
 }
 .icon {
-  width: 1rem;
-  height: 1rem;
+  width: 1.2rem;
+  height: 1.2rem;
   @include color("theme-color-3");
   fill: currentColor;
 }
 .copy-btn {
-  user-select: none;
-  height: 26px;
-  opacity: 0;
+  height: 36px;
+  padding: 10px;
   position: absolute;
   right: 5px;
   top: 5px;
-  cursor: pointer;
-  padding: 5px;
+  z-index: 10;
   border-radius: 3px;
+  opacity: 0;
   transition: 0.3s;
+  background: rgba(235, 235, 235, 0.685);
+  user-select: none;
+  cursor: pointer;
   &:hover {
-    background: rgba(221, 221, 221, 0.575);
+    background: rgba(225, 225, 225, 0.685);
   }
   &:active {
-    background: rgba(156, 156, 156, 0.575);
+    background: rgba(194, 194, 194, 0.685);
   }
 }
 .copy-success-text {
-  @include color("theme-color-2");
+  @include color("theme-color-3");
   position: absolute;
+  z-index: 10;
+  right: 3rem;
+  top: 5px;
+  padding: 0 10px;
+  line-height: 36px;
   font-size: 12px;
-  top: 8px;
-  right: 2.5rem;
+  border-radius: 3px;
   animation: successCopy 1s ease-in-out both 1;
+  background: rgba(235, 235, 235, 0.685);
 }
 @keyframes successCopy {
   70% {

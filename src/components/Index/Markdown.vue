@@ -24,14 +24,15 @@ const getMarkData = function () {
 };
 const codeCopyBtn = function () {
   document.querySelectorAll("pre").forEach((el) => {
-    if (el.classList.contains("code-copy-added")) return;
-    el.classList.add("code-copy-added");
+    const node = el.parentNode;
+    if (node.classList.contains("code-copy-added")) return;
+    node.classList.add("code-copy-added");
     let instance = createVNode(CodeCopy, {
       code: el.innerText,
     });
     let mountNode = document.createElement("div");
     render(instance, mountNode);
-    el.appendChild(mountNode.childNodes[0]);
+    node.appendChild(mountNode.childNodes[0]);
   });
 };
 // API
@@ -65,7 +66,7 @@ watch(
 .markdown {
   display: flex;
   text-align: left;
-  min-height: 70%;
+  min-height: 70vh;
   #markdown {
     width: 0;
     flex: 1;
