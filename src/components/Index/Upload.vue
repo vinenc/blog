@@ -67,7 +67,7 @@ const data = reactive({
   tag: "",
   summary: "",
   content: "",
-  author: "陈曦",
+  author: "博主",
   url: "",
 });
 

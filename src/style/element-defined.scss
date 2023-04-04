@@ -2,6 +2,9 @@
 .github-markdown-body .hljs-quote {
   font-style: normal !important;
 }
+.code-copy-added:hover .copy-btn {
+  opacity: 1;
+}
 blockquote {
   margin: 0 0 16px;
 }

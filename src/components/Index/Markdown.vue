@@ -6,8 +6,9 @@
 </template>
 
 <script setup>
-import { onMounted, ref } from "vue";
+import { createVNode, onMounted, ref, render, nextTick } from "vue";
 import MarkdownTitleList from "./MarkdownTitleList.vue";
+import CodeCopy from "../Custom/CodeCopy.vue";
 import API from "@/api/axios";
 import router from "@/router/index";
 import { markBodyStyle } from "@/js/markdown";
@@ -21,10 +22,23 @@ const getMarkData = function () {
   getPaper(mark.id);
   addWatcher(mark.id, mark.title);
 };
+const codeCopyBtn = function () {
+  document.querySelectorAll("pre").forEach((el) => {
+    if (el.classList.contains("code-copy-added")) return;
+    el.classList.add("code-copy-added");
+    let instance = createVNode(CodeCopy, {
+      code: el.innerText,
+    });
+    let mountNode = document.createElement("div");
+    render(instance, mountNode);
+    el.appendChild(mountNode.childNodes[0]);
+  });
+};
 // API
 const getPaper = function (id) {
   API.get("/getPaper?id=" + id).then((res) => {
     markData.value = res.data[0];
+    nextTick(() => codeCopyBtn());
   });
 };
 const addWatcher = function (id, title) {
