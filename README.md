@@ -18,7 +18,7 @@
 | /getCount        |   GET    |                       N/A                       | num / 文章总数                        | 获取博客文章总数量                         |
 | /getPaper        |   GET    |                       id                        | obj / 文章所有数据                    | 获取一篇博客的详细数据                     |
 | /getPaperList    |   GET    |                      page                       | array / 文章所有数据，除内容          | 根据页数获取文章，一页5篇                  |
-| /getPaperTop     |   GET    |                       N/A                       | array / (id，title，watcher)          | 获取浏览量前十的文章                       |
+| /getPaperTop     |   GET    |                       N/A                       | array / (id,title,watcher)          | 获取浏览量前十的文章                       |
 | /searchPaper     |   POST   |                      input                      | array / (id,title)                    | 搜索输入关联的文章                         |
 | /searchPaperList |   GET    |                      input                      | array / 文章所有数据，除内容          | 搜索输入关联的文章                         |
 | /typePaperList   |   GET    |                      type                       | array / 文章所有数据，除内容          | 根据类型获取文章列表                       |
