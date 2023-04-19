@@ -12,6 +12,12 @@
 
 Demo展示：https://www.waowaowao.cn
 
+**功能实现**：
+
+1. 响应式布局，适配多端设备；
+2. 深/浅 色主题切换，可更换主颜色；
+3. 登录验证，文件上传。
+
 ## 使用
 
 ### 后端
@@ -68,3 +74,21 @@ const API = axios.create({
 ```shell
 npm run dev
 ```
+
+### Demo展示
+
+主题切换：
+
+<img src="./img/a.jpg" style="zoom:50%;" />
+
+<img src="./img/b.jpg" style="zoom: 50%;" />
+
+响应式设计：
+
+<img src="./img/e.jpg" style="zoom: 50%;" />
+
+<img src="./img/f.jpg" style="zoom: 50%;" />
+
+文件上传：
+
+<img src="./img/d.jpg" style="zoom:50%;" />
